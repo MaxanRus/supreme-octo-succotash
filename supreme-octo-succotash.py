@@ -19,7 +19,7 @@ def update():
     root.after(100, update)
 
 
-def pf(event):
+def event_press(event):
     global count_correct_clicks
     global begin
     global count_errors
@@ -95,15 +95,11 @@ print(progress_view["state"])
 
 progress_view["state"] = "disable"
 
-root.bind("<Key>", pf)
-
-# progress_view.bind()
-
+root.bind("<Key>", event_press)
 
 str_lbl_time = StringVar()
 lbl_time = Label(root, textvariable=str_lbl_time)
 lbl_time.pack()
-#lbl_time.grid(column=1, row=0)
 root.after(100, update)
 
 root.mainloop()
